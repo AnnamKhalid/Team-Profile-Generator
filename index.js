@@ -39,4 +39,24 @@ const questions = async () => {
             choices: [ "Engineer", "Intern", "Manager"],
         },
     ])
+
+    if (answers.role === "Manager") {
+        const managerAns = await inquirer
+          .prompt([
+            {
+              type: "input",
+              message: "What is your office number",
+              name: "officeNumber",
+            },
+          ])
+
+          const newManager = new Manager(
+            answers.name,
+            answers.id,
+            answers.email,
+            managerAns.officeNumber
+          );
+          newStaffMemberData.push(newManager);
+          
+
 }
