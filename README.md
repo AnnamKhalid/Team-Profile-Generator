@@ -3,6 +3,9 @@
 ## Description
 A Node.js command-line application, that takes in information about employees on a software engineering team, and generates a HTML webpage that displays summaries for each person.
 
+the Application should resemble the following screenshot:
+ ![Image of expected outcome of team profile generator](assets/14-object-oriented-programming-challenge-demo.png)
+
 ## Demo
 Link to the demo of the Team Profile Generator.
 
