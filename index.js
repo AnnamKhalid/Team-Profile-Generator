@@ -119,7 +119,7 @@ async function promptQuestions() {
   promptQuestions();
 
 function createTeam() {
-    console.log("new guy", newStaffMemberData);
+    console.log("new team member", newStaffMemberData);
   
     if (!fs.existsSync(OUTPUT_DIR)) {
       fs.mkdirSync(OUTPUT_DIR);
