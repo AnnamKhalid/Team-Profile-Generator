@@ -7,7 +7,7 @@ the Application should resemble the following screenshot:
  ![Image of expected outcome of team profile generator](assets/14-object-oriented-programming-challenge-demo.png)
 
 ## Demo
-Link to the demo of the Team Profile Generator.
+[Link to the demo of the Team Profile Generator.](https://drive.google.com/file/d/18tpBbYUo8IU7ueW88E0fcyFCpssQpKvy/view)
 
 ## Installation
 To set up the Team Profile Generator follow these steps:

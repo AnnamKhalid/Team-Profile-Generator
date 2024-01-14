@@ -81,7 +81,7 @@ const questions = async () => {
                 {
                     type: "input",
                     message: "What university did you attend?",
-                    name: "School",
+                    name: "school",
                 },
                 ])
                 const newIntern = new Intern(
