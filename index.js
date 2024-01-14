@@ -39,4 +39,94 @@ const questions = async () => {
             choices: [ "Engineer", "Intern", "Manager"],
         },
     ])
-}
+
+    if (answers.role === "Manager") {
+        const managerAns = await inquirer
+          .prompt([
+            {
+              type: "input",
+              message: "What is your office number",
+              name: "officeNumber",
+            },
+          ])
+
+          const newManager = new Manager(
+            answers.name,
+            answers.id,
+            answers.email,
+            managerAns.officeNumber
+          );
+          newStaffMemberData.push(newManager);
+        } else if (answers.role === "Engineer") {
+            const githubAns = await inquirer
+              .prompt([
+                {
+                  type: "input",
+                  message: "What is your GitHub user name?",
+                  name: "github",
+                }
+            ])
+
+        const newEngineer = new Engineer(
+            answers.name,
+            answers.id,
+            answers.email,
+            githubAns.github
+            );
+            newStaffMemberData.push(newEngineer);
+
+        } else if (answers.role === "Intern") {
+            const internAns = await inquirer
+                .prompt([
+                {
+                    type: "input",
+                    message: "What university did you attend?",
+                    name: "School",
+                },
+                ])
+                const newIntern = new Intern(
+                answers.name,
+                answers.id,
+                answers.email,
+                internAns.school
+                );
+                newStaffMemberData.push(newIntern);          
+            } 
+};
+
+async function promptQuestions() {
+    await questions()
+      
+    
+    const addMemberAns = await inquirer
+      .prompt([
+        {
+          name:'addMember',
+          type: 'list',
+          choices: ['Add a new member', 'Finish building team'],
+          message: "What would you like to do next?"
+        }
+      ])
+
+      if (addMemberAns.addMember === 'Add a new member') {
+        return promptQuestions()
+      } else{
+          createTeam();
+      }
+    
+  }
+
+  promptQuestions();
+
+function createTeam() {
+    console.log("new guy", newStaffMemberData);
+  
+    if (!fs.existsSync(OUTPUT_DIR)) {
+      fs.mkdirSync(OUTPUT_DIR);
+    }
+    fs.writeFileSync(
+      outputPath,
+      render(newStaffMemberData),
+      "utf-8"
+    );
+  }
