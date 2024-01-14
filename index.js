@@ -57,6 +57,23 @@ const questions = async () => {
             managerAns.officeNumber
           );
           newStaffMemberData.push(newManager);
-          
+        } else if (answers.role === "Engineer") {
+            const githubAns = await inquirer
+              .prompt([
+                {
+                  type: "input",
+                  message: "What is your GitHub user name?",
+                  name: "github",
+                }
+            ])
+            
+            const newEngineer = new Engineer(
+                answers.name,
+                answers.id,
+                answers.email,
+                githubAns.github
+              );
+              newStaffMemberData.push(newEngineer);
+
 
 }
