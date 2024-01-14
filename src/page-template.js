@@ -4,12 +4,12 @@ const generateTeam = team => {
     // creates the manager html
     const generateManager = manager => {
         return `
-        <div class="card employee-card">
-        <div class="card-header">
+        <div class="card employee-card shadow p-3 mb-5 bg-body rounded max-width: 100%">
+        <div class="card-header p-3 mb-2 bg-primary text-white">
             <h2 class="card-title">${manager.getName()}</h2>
             <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
         </div>
-        <div class="card-body">
+        <div class="card-body p-3 mb-2 bg-light text-dark">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${manager.getId()}</li>
                 <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
@@ -23,12 +23,12 @@ const generateTeam = team => {
     // creates the html for engineers
     const generateEngineer = engineer => {
         return `
-        <div class="card employee-card">
-    <div class="card-header">
+        <div class="card employee-card shadow p-3 mb-5 bg-body rounded max-width: 100%">
+    <div class="card-header p-3 mb-2 bg-primary text-white">
         <h2 class="card-title">${engineer.getName()}</h2>
         <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
     </div>
-    <div class="card-body">
+    <div class="card-body p-3 mb-2 bg-light text-dark">
         <ul class="list-group">
             <li class="list-group-item">ID: ${engineer.getId()}</li>
             <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
@@ -42,12 +42,12 @@ const generateTeam = team => {
     // creates the html for interns
     const generateIntern = intern => {
         return `
-        <div class="card employee-card">
-    <div class="card-header">
+        <div class="card employee-card shadow p-3 mb-5 bg-body rounded max-width: 100%">
+    <div class="card-header p-3 mb-2 bg-primary text-white">
         <h2 class="card-title">${intern.getName()}</h2>
         <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h3>
     </div>
-    <div class="card-body">
+    <div class="card-body p-3 mb-2 bg-light text-dark">
         <ul class="list-group">
             <li class="list-group-item">ID: ${intern.getId()}</li>
             <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
@@ -100,7 +100,7 @@ module.exports = team => {
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 jumbotron mb-3 team-heading">
+            <div class="col-12 jumbotron mb-3 team-heading p-3 mb-2 bg-danger text-white">
                 <h1 class="text-center">My Team</h1>
             </div>
         </div>
