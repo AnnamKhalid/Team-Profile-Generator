@@ -16,7 +16,7 @@ const render = require("./src/page-template.js");
 const newStaffMemberData = [];
 
 const questions = async () => {
-    const answers = await inquirer.promt([
+    const answers = await inquirer.prompt([
         {
             type: "input",
             message: "What is your name?",
@@ -25,7 +25,7 @@ const questions = async () => {
         {
             type: "input",
             message: "What is your ID number?",
-            name: "ID",
+            name: "id",
         },
         {
             type: "input",
@@ -99,7 +99,7 @@ async function promptQuestions() {
       
     
     const addMemberAns = await inquirer
-      .prompt([
+    .prompt([
         {
           name:'addMember',
           type: 'list',
